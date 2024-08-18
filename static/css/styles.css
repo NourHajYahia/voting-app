@@ -1,0 +1,46 @@
+/* Split the screen */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+/* Left side - Dog */
+.left {
+    flex: 1;
+    background: url('../image/dogs.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Right side - Cat */
+.right {
+    flex: 1;
+    background: url('../image/cats.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Button styling */
+button {
+    padding: 20px 40px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.left button {
+    background-color: navy;
+}
+
+.right button {
+    background-color: darkred;
+}
