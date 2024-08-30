@@ -5,6 +5,14 @@
     height: 100%;
 }
 
+.reset {
+    flex: 1;
+    display: flex;
+    background-color: aquamarine;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Left side - Dog */
 .left {
     flex: 1;

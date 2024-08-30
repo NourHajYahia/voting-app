@@ -16,13 +16,17 @@ def vote(option):
         r.incr('dog')
     elif option.lower() == 'cat':
         r.incr('cat')
-    return redirect(url_for('results'))
-
-@app.route('/results')
-def results():
     dog_votes = int(r.get('dog') or 0)
     cat_votes = int(r.get('cat') or 0)
-    return render_template('results.html', dog_votes=dog_votes, cat_votes=cat_votes)
+    print("dogs votes are: %d , cats votes are: %d" % (dog_votes, cat_votes))
+    return render_template('index.html')
+    
+
+@app.route('/reset')
+def reset():
+    r.set('dog', 0)
+    r.set('cat', 0)
+    return render_template('index.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
