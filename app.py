@@ -6,6 +6,10 @@ app = Flask(__name__)
 # Connect to Redis
 r = redis.Redis(host='localhost', port=6379, db=0)
 
+# Define the stream name
+stream_name = 'votingstream'
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -13,13 +17,31 @@ def home():
 @app.route('/vote/<option>')
 def vote(option):
     if option.lower() == 'dog':
-        r.incr('dog')
+        r.xadd(stream_name, {'animal':'dog'})
     elif option.lower() == 'cat':
-        r.incr('cat')
-    dog_votes = int(r.get('dog') or 0)
-    cat_votes = int(r.get('cat') or 0)
-    print("dogs votes are: %d , cats votes are: %d" % (dog_votes, cat_votes))
+        r.xadd(stream_name, {'animal':'cat'})
     return render_template('index.html')
+
+@app.route('/result')
+def index():
+    return render_template('result.html')
+
+@app.route('/next')
+def get_next_value():
+    # XREAD blocks until it finds an entry
+    stream_data = r.xread({stream_name: '$'}, block=0, count=1)
+    
+    # Assuming stream_data format: [(stream_name, [(entry_id, entry_data)])]
+    # Process the entries
+    for stream, messages in stream_data:
+        for message_id, message_data in messages:
+            print(f"ID: {message_id}")
+            for key, value in message_data.items():
+                print(f"{key.decode('utf-8')}: {value.decode('utf-8')}")
+                return {'value': value.decode('utf-8')}
+
+    return {'value': 'No data available'}
+
     
 
 @app.route('/reset')
