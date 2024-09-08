@@ -3,8 +3,11 @@ import redis
 
 app = Flask(__name__)
 
+
+redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+
 # Connect to Redis
-r = redis.Redis(host='localhost', port=6379, db=0)
+r = redis.Redis.from_url(redis_url)
 
 # Define the stream name
 stream_name = 'votingstream'
