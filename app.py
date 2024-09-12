@@ -1,10 +1,11 @@
 from flask import Flask, render_template, redirect, url_for
 import redis
+import os
 
 app = Flask(__name__)
 
 
-redis_url = os.getenv('REDIS_URL', 'redis://localhost:6379/0')
+redis_url = os.getenv('REDIS_URL', 'redis://redis:6379/0')
 
 # Connect to Redis
 r = redis.Redis.from_url(redis_url)
