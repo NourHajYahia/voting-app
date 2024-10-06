@@ -1,0 +1,35 @@
+Error: unknown command "dashbaord" for "minikube"
+
+Did you mean this?
+	dashboard
+
+Run 'minikube --help' for usage.
+Error: unknown command "dashbaord" for "minikube"
+
+Did you mean this?
+	dashboard
+
+Run 'minikube --help' for usage.
+Error: unknown command "dashbaord" for "minikube"
+
+Did you mean this?
+	dashboard
+
+Run 'minikube --help' for usage.
+* Verifying dashboard health ...
+* Launching proxy ...
+* Verifying proxy health ...
+* Opening http://127.0.0.1:40745/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/ in your default browser...
+Gtk-Message: 19:59:52.370: Not loading module "atk-bridge": The functionality is provided by GTK natively. Please try to not load it.
+[18246, Main Thread] WARNING: GTK+ module /snap/firefox/4848/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.: 'glib warning', file /build/firefox/parts/firefox/build/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:18246): Gtk-WARNING **: 19:59:52.446: GTK+ module /snap/firefox/4848/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.
+Gtk-Message: 19:59:52.446: Failed to load module "canberra-gtk-module"
+[18246, Main Thread] WARNING: GTK+ module /snap/firefox/4848/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.: 'glib warning', file /build/firefox/parts/firefox/build/toolkit/xre/nsSigHandlers.cpp:187
+
+(firefox:18246): Gtk-WARNING **: 19:59:52.447: GTK+ module /snap/firefox/4848/gnome-platform/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.so cannot be loaded.
+GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported.
+Gtk-Message: 19:59:52.447: Failed to load module "canberra-gtk-module"
